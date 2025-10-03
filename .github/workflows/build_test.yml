@@ -20,5 +20,8 @@ jobs:
         node-version: 20
     - name: Instsll node modules
       run: npm instal
+    - name: Execute static security tests
+      run: npm audit
     - name: Execute inegration tests
       run: npm test
+    
