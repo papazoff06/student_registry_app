@@ -1,4 +1,4 @@
-name: Build and test
+name: Build and test matrix
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
 
-  build_test:
+  build_tes_matrixt:
   
     runs-on: ubuntu-latest
 
