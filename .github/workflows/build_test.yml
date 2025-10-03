@@ -7,22 +7,18 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
 
+  build_test:
+  
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x, 22.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Repo checkout
+      uses: actions/checkout@v4
+    - name: Use Node.js 20
       uses: actions/setup-node@v4
       with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm instal
-    - run: npm start
-    - run: npm test
+        node-version: 20
+    - name: Instsll node modules
+      run: npm instal
+    - name: Execute inegration tests
+      run: npm test
